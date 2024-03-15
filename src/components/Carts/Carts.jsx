@@ -3,7 +3,7 @@ import { useState } from "react"
 import Cart from "../Cart/Cart";
 
 
-const Carts = () => {
+const Carts = ({handleCredit}) => {
     const [carts, setCart] = useState([])
    
     useEffect(()=>{
@@ -14,9 +14,9 @@ const Carts = () => {
 
     return (
       
-        <div  className="grid grid-cols-3 w-full">
+        <div  className="grid grid-cols-1 lg:grid-cols-3 w-full">
            {
-            carts.map(cart => <Cart key={cart.id} cart={cart}></Cart>)
+            carts.map(cart => <Cart key={cart.id} cart={cart} handleCredit={handleCredit}></Cart>)
            }
         </div>
     );

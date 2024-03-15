@@ -1,15 +1,15 @@
 
 
-const Cart = ({cart}) => {
+const Cart = ({cart, handleCredit}) => {
      const {name, description, photo, price, credit} = cart;
 
 
     return (
       <div>
         <div className="mr-5 ">
-          <div className="card w-full h-[450px] bg-base-100 shadow-xl mr-4 mb-4">
+          <div className="card bg-base-100 shadow-xl mr-4 mb-4">
             <figure>
-              <img className="w-full p-2"
+              <img className="w-[400px] p-2"
                 src={photo}
                 alt="Shoes"
               />
@@ -28,7 +28,7 @@ const Cart = ({cart}) => {
     Credit: {credit}hr</p>
               </div>
               <div className="card-actions">
-                <button className="btn btn-primary w-full mt-4">Select</button>
+                <button className="btn btn-primary w-full mt-4" onClick={()=>handleCredit(cart, price, credit)}>Select</button>
               </div>
             </div>
           </div>
